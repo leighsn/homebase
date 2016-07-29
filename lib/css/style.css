@@ -1,0 +1,10 @@
+.container ul li {
+  width: 33%;
+  float: left;
+  height: 300px;
+}
+
+.thumb {
+  width: 100%;
+  height: 250px;
+}
