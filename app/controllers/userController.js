@@ -8,6 +8,9 @@ class UserController {
         event.preventDefault()
         console.log('User Submit Working')
         //create new user
+        let name = $('#username').val()
+        let zip = $('#user-zipcode').val()
+        var newUser = new User(name, zip)
       })
       }
 }
