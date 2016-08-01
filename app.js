@@ -1,6 +1,7 @@
 const Store = {
   users: [],
-  jambaseEvents: []
+  nytimesArticles: [] 
+  // jambaseEvents: []
 }
 
 $(function() { // on document ready
