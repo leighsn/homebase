@@ -5,8 +5,6 @@ class JamBaseEventController {
     this.jambaseEventAdapter()
   }
 
-
-
   jambaseEventAdapter(){
     //variables for ajax call
     var userZip = Store.users[0].zipcode
