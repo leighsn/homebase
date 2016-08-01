@@ -9,4 +9,5 @@ $(function() { // on document ready
   userController.init()
   textController = new twilioSendTextController()
   textController.init()
+  // userController.prototype.userSubmitListener()
 })

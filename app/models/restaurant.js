@@ -24,16 +24,16 @@ $(function(){
     $("#restaurant_feed").empty();
     $("#user-form input").empty();
     event.preventDefault()
-  
+
     $.ajax({
       method: "GET",
       url: `http://opentable.herokuapp.com/api/restaurants?zip=${zipCode}`,
     }).done(function(data){
         if (data.restaurants.length > 0) {
           data.restaurants.forEach(function(element){
-              alert("ASfs")
+              //alert("ASfs")
           $('#restaurant_feed').append('<li><div class="panel panel-default"><div class="thumb" style="background: url('+ element.image_url +') center center no-repeat; background-size: cover;"></div><div class="panel-heading"><h3 class="panel-title">'+ element.name +'</h3></div><div class="panel-body"><span>'+ element.address +'</span><br/><span>'+ element.city +', '+ element.state +'</span></div></div></li>');
-        }) 
+        })
       }
     })
   })

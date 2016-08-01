@@ -10,20 +10,25 @@ class UserController {
         event.preventDefault()
         console.log('User Submit Working')
         //create new user
-        let name = $('#username').val()
-        let zip = $('#user-zipcode').val()
-        var newUser = new User(name, zip)
-
-        if (Store.users.length > 0) {
-          console.log('Created new User')
-        }
+        UserController.prototype.createUser()
 
         //create a new instance of a jambaseEventController
+
         var nytController = new nytimesController();
         nytController.init()
 
-        // userController = new UserController()
-        // userController.init()
+        var jambaseEventController = new JamBaseEventController();
+        jambaseEventController.init()
+
       })
       }
+
+     createUser() {
+      let name = $('#username').val()
+      let zip = $('#user-zipcode').val()
+      var newUser = new User(name, zip)
+      if (Store.users.length > 0) {
+        console.log('Created new User')
+      }
+    }
 }
