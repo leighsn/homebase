@@ -3,15 +3,40 @@
   <head>
     <meta charset="UTF-8">
     <title>Eat, Read, Rock, Repeat</title>
-    <script src="lib/jquery-3.1.0.min.js"></script>
+  <script src="lib/jquery-3.1.0.min.js"></script>
+  <script src="app/models/user.js"></script>
+  <script src="app/models/jambaseEvent.js"></script>
+  <script src="app/controllers/userController.js"></script>
+  <script src="app/controllers/jambaseEventController.js"></script>
+
+  <script src="app.js"></script>
     <script src="app/models/restaurant.js"></script>
     <link href="lib/css/style.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
+  <div id="wrapper">
     <div class="container">
-      <ul id="restaurant_feed">
-      </ul>
+      <form id="user-form">
+        <label>Username:</label>
+        <input id="username" type="text" name="username"> <br>
+        <label>Zip:</label>
+        <input id="user-zipcode" type="text" name="zipcode"><br>
+        <input id="user-form-submit" type="submit" value="submit">
+      </form>
     </div>
+    <div class="feed">
+        <!--bandintown-->
+        <ul id="event-feed">
+        <h2>BandsInTown</h2>
+        </ul>
+        <!--opentable-->
+        <ul id="restaurant_feed">
+        <h2>Open Table</h2>
+        </ul>
+      </div>
+    </div>
+  </div><!-- #wrapper -->
+
 
   </body>
 </html>

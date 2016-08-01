@@ -1,6 +1,9 @@
-.container ul li {
+.feed ul {
   width: 33%;
   float: left;
+}
+
+.feed ul li {
   height: 400px;
 }
 
