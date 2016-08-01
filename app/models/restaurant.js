@@ -13,7 +13,7 @@ $(function(){
         state = element.state,
         imageUrl = element.image_url
 
-        $('#restaurant_feed').append('<li><div class="thumb" style="background: url('+ element.image_url +') center center no-repeat; background-size: cover;"></div><h3>'+ element.name +'</h3><span>'+ element.address +'</span><br/><span>'+ element.city +', '+ element.state +'</span></li>');
+        $('#restaurant_feed').append('<li><div class="panel panel-default"><div class="thumb" style="background: url('+ element.image_url +') center center no-repeat; background-size: cover;"></div><div class="panel-heading"><h3 class="panel-title">'+ element.name +'</h3></div><div class="panel-body"><span>'+ element.address +'</span><br/><span>'+ element.city +', '+ element.state +'</span></div></div></li>');
 
       })
     }
@@ -32,7 +32,7 @@ $(function(){
         if (data.restaurants.length > 0) {
           data.restaurants.forEach(function(element){
               alert("ASfs")
-          $('#restaurant_feed').append('<li><div class="thumb" style="background: url('+ element.image_url +') center center no-repeat; background-size: cover;"></div><h3>'+ element.name +'</h3><span>'+ element.address +'</span><br/><span>'+ element.city +', '+ element.state +'</span></li>');
+          $('#restaurant_feed').append('<li><div class="panel panel-default"><div class="thumb" style="background: url('+ element.image_url +') center center no-repeat; background-size: cover;"></div><div class="panel-heading"><h3 class="panel-title">'+ element.name +'</h3></div><div class="panel-body"><span>'+ element.address +'</span><br/><span>'+ element.city +', '+ element.state +'</span></div></div></li>');
         }) 
       }
     })
