@@ -6,4 +6,5 @@ const Store = {
 $(function() { // on document ready
   userController = new UserController()
   userController.init()
+  // userController.prototype.userSubmitListener()
 })

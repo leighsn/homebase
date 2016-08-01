@@ -4,7 +4,7 @@ const JambaseEvent = (function(){
   return class {
     constructor(eventDate, artistName, ticketUrl, venue, venueLink, city) {
       this.id = counter++
-      this.eventDate = eventDate
+      this.eventDate = JambaseEvent.prototype.dateFixer(eventDate)
       this.artistName = artistName
       this.ticketUrl = ticketUrl
       this.venue = venue
@@ -16,13 +16,42 @@ const JambaseEvent = (function(){
       var current_user_object = Store.users.find( (user) => {return user.name === current_username})
       this.user_id = current_user_object.id
 
+      //save object to Store
       Store.jambaseEvents.push(this)
       console.log('Created new jambaseEvent object')
     }
 
-    displayBuilder(){
+    dateFixer(date){
+      //"2016-08-01T18:00:00" fix this
+      var year = date.slice(0, 4)
+      var month = date.slice(5, 7)
+      var day = date.slice(8, 10)
+      return `${month}/${day}/${year}`
+    }
 
+    build(){
+      $('#event-feed').append(`<li>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <span>
+                <h3 class="panel-title">
+                  <span> ${this.eventDate} </span> --
+                  <span> ${this.city} </span>
+                </h3>
+            </div>
+            <div class="panel-body">
+              <h3> <a href="${this.ticketURL}"> ${this.artistName} </a></h3>
+              @<a href="${this.venueLink}">${this.venue}</a>
+              <br>
+            </div>
+          </div>
+        </li>`)
     }
   }
 
 }())
+
+
+// <span>'+ element.address +'</span>
+// <br/>
+// <span>'+ element.city +', '+ element.state +'</span>
