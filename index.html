@@ -8,7 +8,12 @@
   <script src="app/models/jambaseEvent.js"></script>
   <script src="app/controllers/userController.js"></script>
   <script src="app/controllers/jambaseEventController.js"></script>
+  <script src="app/controllers/nytimesController.js"></script>
+  <script src="app/controllers/twilioSendText.js"></script>
+  <script src="app/models/twilioText.js"></script>
+  <script src="app/models/nytimesArticle.js"></script>
   <script src="app.js"></script>
+  <script src="config.js"></script>
     <script src="app/models/restaurant.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -63,9 +68,10 @@
               </ul>
             </div>
             <div class="col-md-4">
-              <!--opentable-->
-              <ul class="list-unstyled">
-                <h2>New York Times</h2>
+              <!--nyt-->
+              <h2>New York Times</h2>
+              <ul class="list-unstyled" id="nyt-feed">
+                
               </ul>
             </div>
             <div class="col-md-4">
