@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Homebase</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Eat, Read, Rock, Repeat</title>
   <script src="lib/jquery-3.1.0.min.js"></script>
-  <script src="scripts/app.js"></script>
-</head>
-<body>
-  <h1> New York Times Feed </h1>
-     
-  <div class="details">Choose an artist</div>
-   
-   <form action=""> <!-- where to send the form data when form is submitted -->
-     <div class='name '>
-       <label for="name">Name</label>
-       <input id='name' class='input input_name' type="text" >
-     </div>
-     <input type="submit">
-   </form>
+  <script src="app/models/user.js"></script>
+  <script src="app/models/jambaseEvent.js"></script>
+  <script src="app/controllers/userController.js"></script>
+  <script src="app/controllers/jambaseEventController.js"></script>
+  <script src="app.js"></script>
+    <script src="app/models/restaurant.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="lib/css/style.css" media="screen" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+  <div id="wrapper">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Eat, Read, Rock, Repeat</a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a>Welcome, User Name!</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="well well-lg">
+            <form id="user-form">
+              <div class="form-group">
+                <label>Username:</label>
+                  <input class="form-control" id="username" type="text" name="username"> <br>
+                </div>
+                <div class="form-group">
+                  <label>Zip:</label>
+                  <input class="form-control" id="user-zipcode" type="text" name="zipcode"><br>
+                </div>
+                <input class="btn btn-primary" id="user-form-submit" type="submit" value="submit">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="feed">
+          <!--bandintown-->
+          <div class="row">
+            <div class="col-md-4">
+              <!--opentable-->
+              <ul class="list-unstyled" id="restaurant_feed">
+              <h2>Open Table</h2>
+            </div>
+            <div class="col-md-4">
+              <!--opentable-->
+              <ul class="list-unstyled">
+              <h2>New York Times</h2>
+            </div>
+            <div class="col-md-4">
+              <h2>BandsInTown</h2>
+              <ul class="list-unstyled" id="event-feed">
+              </ul>
+            </div>
+          </diV>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div><!-- #wrapper -->
 
-   <div class="images">
-   </div>
-
-</body>
+  </body>
 </html>
