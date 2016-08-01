@@ -13,6 +13,10 @@ class UserController {
         UserController.prototype.createUser()
 
         //create a new instance of a jambaseEventController
+
+        var nytController = new nytimesController();
+        nytController.init()
+
         var jambaseEventController = new JamBaseEventController();
         jambaseEventController.init()
 
