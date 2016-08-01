@@ -1,7 +1,7 @@
 const Store = {
   users: [],
-  nytimesArticles: [] 
-  // jambaseEvents: []
+  nytimesArticles: [],
+  jambaseEvents: []
 }
 
 $(function() { // on document ready
@@ -9,5 +9,4 @@ $(function() { // on document ready
   userController.init()
   textController = new twilioSendTextController()
   textController.init()
-  // userController.prototype.userSubmitListener()
 })

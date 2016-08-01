@@ -23,8 +23,12 @@ class JamBaseEventController {
       method: "GET",
       url: urlString
     }).done(function(response) {
-      JamBaseEventController.prototype.jamebaseEventFactory(response.Events)
+      if (response.Events.length > 0) {
+        JamBaseEventController.prototype.jamebaseEventFactory(response.Events)
       JamBaseEventController.prototype.feedBuilder()
+    } else {
+      alert('Invalid Search')
+    }
     }) // callback function within .done
   } //jambaseEventAdapter close
 
