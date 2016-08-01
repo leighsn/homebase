@@ -9,6 +9,9 @@
   <script src="app/models/nytimesArticle.js"></script>
   <script src="app/controllers/userController.js"></script>
   <script src="app/controllers/nytimesController.js"></script>
+  <script src="app/controllers/twilioSendText.js"></script>
+  <script src="app/models/twilioText.js"></script>
+
 
   <script src="app.js"></script>
 </head>
@@ -23,6 +26,13 @@
         <input id="user-zipcode" type="text" name="zipcode"><br>
         <input id="user-form-submit" type="submit" value="submit">
       </form>
+
+      <br>
+      <form id="text-form">
+      <input id="phone-number" type="text" name="phone-number"> 
+      <input id="text-form-submit" type="submit" value="submit">
+      </form>
+
     </div>
     <div id="feed">
         <!--bandintown-->
