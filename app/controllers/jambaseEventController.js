@@ -3,11 +3,9 @@ class JamBaseEventController {
   init() {
     console.log('JamBaseController.init() is being reached')
     this.jambaseEventAdapter()
-    //fire off function to display all events
-    //function1 is called
-    //function 1 iterates over Store.Events
-    //function function1 calls on jambaseEVent model method to build out tags
   }
+
+
 
   jambaseEventAdapter(){
     //variables for ajax call
@@ -38,6 +36,6 @@ class JamBaseEventController {
         console.log("Response contains 0 events!")
       }
 
-    }) // anon function .done
+    }) // anon function within .done
   } //jambaseEventAdapter close
 } // jambaseEventController close
