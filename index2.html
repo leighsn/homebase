@@ -5,15 +5,17 @@
   <title>HomeBase</title>
   <link rel="stylesheet" href="lib/css/style.css">
   <script src="lib/jquery-3.1.0.min.js"></script>
+  <!-- <script src="config.js"></script> -->
   <script src="app/models/user.js"></script>
   <script src="app/models/nytimesArticle.js"></script>
   <script src="app/controllers/userController.js"></script>
   <script src="app/controllers/nytimesController.js"></script>
   <script src="app/controllers/twilioSendText.js"></script>
   <script src="app/models/twilioText.js"></script>
+  <script src="app/controllers/jambaseEventController.js"></script>
   <script src="app.js"></script>
   <script src="config.js"></script>
-  
+
 </head>
 <body>
 
@@ -29,7 +31,7 @@
 
       <br>
       <form id="text-form">
-      <input id="phone-number" type="text" name="phone-number"> 
+      <input id="phone-number" type="text" name="phone-number">
       <input id="text-form-submit" type="submit" value="submit">
       </form>
 
