@@ -50,14 +50,14 @@ class UserController {
     new User(this.userName, this.userZip)
     var jambaseEventController = new JamBaseEventController();
     var restaurantListController = new RestaurantListController();
-    //ny times new here
+    var forecastController= new ForecastController();
     var nytController = new nytimesController();
     console.log('Created new User')
 
     //I want to break these out
     jambaseEventController.init()
     restaurantListController.init(this.userZip)
-    //ny times init here
+    forecastController.init(this.userZip)
     nytController.init()
     this.changeHomePage()
   }
@@ -66,14 +66,4 @@ class UserController {
     $("#logged_in").html('<a href="#">Welcome,' + this.userName + '!</a>').toggle()
     $("#user_div, #login_form").toggle()
   }
-
-  // initializeUserPreference(){
-  // var jambaseEventController = JamBaseEventController();
-  // var restaurantListController = RestaurantListController();
-
-  // jambaseEventController.init()
-  // restaurantListController.init()
-
-  // }
-
 }

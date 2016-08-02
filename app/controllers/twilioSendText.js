@@ -1,11 +1,11 @@
 class twilioSendTextController {
-    init() {
-      this.twilioSubmitListener()
+    init(daySummary,dayTempMax,dayTempMin) {
+      this.twilioSubmitListener(daySummary,dayTempMax,dayTempMin)
       console.log('twilio.init() being called')
     }
 
-    twilioSubmitListener() {
-      $('#text-form-submit').on('click', function(event) {
+    twilioSubmitListener(daySummary,dayTempMax,dayTempMin) {
+      $('#send-text').on('click', function(event) {
         //on submit -------
         event.preventDefault()
         console.log('texter Submit Working')
@@ -13,7 +13,7 @@ class twilioSendTextController {
         TwilioSMS.sendMessage(
           '+14087086249',
           '+14082171539',
-          'Hey chap',
+          `Hello! There is ${daySummary}. We will see temperatures up to ${dayTempMax} and down to ${dayTempMin}`,
 
           function ok() {
             console.log("Message sent!");
