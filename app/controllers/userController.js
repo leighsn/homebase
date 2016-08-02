@@ -64,8 +64,8 @@ class UserController {
   }
 
   changeHomePage() {
-    $("#logged_in").html('<a href="#">Welcome,' + this.userName + '!</a>').toggle()
-    $("#user_div, #login_form").toggle()
+    $("#logged_in").html('<a href="#">Welcome, ' + this.userName + '!</a>')
+    $("#user_div").toggle()
   }
 
   // initializeUserPreference(){

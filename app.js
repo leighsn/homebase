@@ -11,7 +11,8 @@ $(function() { // on document ready
   defaultPage()
 
   $('#log_out_link').click(defaultPage(), function(){
-    $("#user_div, #login_form").toggle()
+    $(".login-overlay").fadeIn()
+    $("#user_div").toggle()
   })
 
   $('#user-form-submit').on('click', function(event) {
