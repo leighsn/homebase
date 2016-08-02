@@ -54,12 +54,13 @@ class UserController {
     var nytController = new nytimesController();
     console.log('Created new User')
 
+    this.changeHomePage()
+
     //I want to break these out
     jambaseEventController.init()
     restaurantListController.init(this.userZip)
     //ny times init here
     nytController.init()
-    this.changeHomePage()
   }
 
   changeHomePage() {

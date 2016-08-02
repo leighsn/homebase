@@ -23,15 +23,15 @@
   </head>
   <body>
   <div id="wrapper">
-    <div class="login-overlay">
+    <!-- <div class="login-overlay"> -->
 
-      <form id="user-form">
-        <input class="form-control" id="username" type="text" name="username" style="color:#888;" value="username" onfocus="inputFocus(this)" onblur="inputBlur(this)"> <br>
-        <input class="form-control" id="user-zipcode" type="text" name="zipcode" style="color:#888;" value="zipcode" onfocus="inputFocus(this)" onblur="inputBlur(this)"><br>
-        <input class="btn btn-primary" id="user-form-submit" type="submit" value="submit" style="float: right;">
-      </form>
+      <!-- <form id="user-form"> -->
+        <!-- <input class="form-control" id="username" type="text" name="username" style="color:#888;" value="username" onfocus="inputFocus(this)" onblur="inputBlur(this)"> <br> -->
+        <!-- <input class="form-control" id="user-zipcode" type="text" name="zipcode" style="color:#888;" value="zipcode" onfocus="inputFocus(this)" onblur="inputBlur(this)"><br> -->
+        <!-- <input class="btn btn-primary" id="user-form-submit" type="submit" value="submit" style="float: right;"> -->
+      <!-- </form> -->
 
-    </div>
+    <!-- </div> -->
 
     <div class="container">
       <nav class="navbar navbar-default">
@@ -48,7 +48,7 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul id="user_div" style="display: none;" class="nav navbar-nav navbar-right">
-              <li><a href="#">Welcome, User!</a></li>
+              <li id="logged_in" style="display: none;"><a href="#">Welcome, User!</a></li>
               <li><a href="#" id="log_out_link">Log Out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
