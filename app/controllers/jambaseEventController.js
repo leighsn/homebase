@@ -16,7 +16,8 @@ class JamBaseEventController {
   renderEvents() {
     var source = $('#event-feed-template').html()
     var template = Handlebars.compile(source)
-    var context = { jambaseEvents: Store.jambaseEvents }
+    var limitedContext = Store.jambaseEvents.slice(1, 20)
+    var context = { jambaseEvents: limitedContext }
     var result = template(context)
     //$('#event-feed').empty()
     $('#event-feed').append(result)
@@ -25,7 +26,7 @@ class JamBaseEventController {
   jambaseEventAdapter(){
     //variables for ajax call
     var userZip = Store.users[0].zipcode
-    var urlString = `http://api.jambase.com/events?zipCode=${userZip}&radius=25&page=0&api_key=m4mdrr2uhpnkydjcxgp3a5bp`
+    var urlString = `http://api.jambase.com/events?zipCode=${userZip}&radius=25&page=0&api_key=wd28u67g657ma3kzxjbdptac`
       console.log(urlString)
 
     // make ajax call & parse results
@@ -45,7 +46,7 @@ class JamBaseEventController {
 
   jamebaseEventFactory(responseEvents) {
     if (responseEvents.length > 0) {
-      for (var i = 0; i < responseEvents.length; i++) {
+      for (var i = 0; i < 25; i++) {
         //set up variables to create new jamebaseEvent
         let eventDate = responseEvents[i].Date,
           artistName = responseEvents[i].Artists[0].Name,

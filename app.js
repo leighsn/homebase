@@ -8,18 +8,18 @@ const Store = {
 $(function() { // on document ready
   textController = new twilioSendTextController()
   textController.init()
-
-
   defaultPage()
 
   $('#log_out_link').click(defaultPage(), function(){
-    $("#user_div, #login_form").toggle()
+    $(".login-overlay").fadeIn()
+    $("#user_div").toggle()
   })
 
   $('#user-form-submit').on('click', function(event) {
     var name = $('#username').val()
     var zip = $('#user-zipcode').val()
     event.preventDefault()
+    $('.login-overlay').fadeOut()
 
     var userController = new UserController(name, zip)
     userController.init()
@@ -53,3 +53,10 @@ $(function() { // on document ready
     })
   }
 })
+
+function inputFocus(i){
+    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+}
+function inputBlur(i){
+    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+}

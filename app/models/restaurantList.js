@@ -13,7 +13,7 @@ const RestaurantList = (function(){
       this.restaurantLink = restaurantLink
       this.restaurantImage = restaurantImage
 
-      Store.restaurantList.push(this)
+      // Store.restaurantList.push(this)
       console.log('Created new restaurantList object')
     }
   }

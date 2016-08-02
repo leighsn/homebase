@@ -39,7 +39,7 @@
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul id="user_div" style="display: none;" class="nav navbar-nav navbar-right">
-              <li><a href="#">Welcome, User!</a></li>
+              <li id="logged_in"><a href="#">Welcome, User!</a></li>
               <li><a href="#" id="log_out_link">Log Out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -47,18 +47,21 @@
       </nav>
       <div class="row">
         <div class="col-md-3">
-          <div id="login_form" class="well well-lg">
-            <form id="user-form">
-              <div class="form-group">
-                <label>Username:</label>
-                  <input class="form-control" id="username" type="text" name="username"> <br>
-                </div>
+          <div class="login-overlay">
+            <h1>Eat, Read, Rock, Repeat</h1>
+            <div id="login_form" class="well well-lg">
+              <form id="user-form">
                 <div class="form-group">
-                  <label>Zip:</label>
-                  <input class="form-control" id="user-zipcode" type="text" name="zipcode"><br>
-                </div>
-                <input class="btn btn-primary" id="user-form-submit" type="submit" value="submit">
-              </form>
+                  <label>Username:</label>
+                    <input class="form-control" id="username" type="text" name="username"> <br>
+                  </div>
+                  <div class="form-group">
+                    <label>Zip:</label>
+                    <input class="form-control" id="user-zipcode" type="text" name="zipcode"><br>
+                  </div>
+                  <input class="btn btn-primary" id="user-form-submit" type="submit" value="submit">
+                </form>
+              </div>
             </div>
           </div>
 

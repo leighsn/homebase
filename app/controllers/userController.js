@@ -54,16 +54,17 @@ class UserController {
     var nytController = new nytimesController();
     console.log('Created new User')
 
+    this.changeHomePage()
+
     //I want to break these out
     jambaseEventController.init()
     restaurantListController.init(this.userZip)
     forecastController.init(this.userZip)
     nytController.init()
-    this.changeHomePage()
   }
 
   changeHomePage() {
-    $("#logged_in").html('<a href="#">Welcome,' + this.userName + '!</a>').toggle()
-    $("#user_div, #login_form").toggle()
+    $("#logged_in").html('<a href="#">Welcome, ' + this.userName + '!</a>')
+    $("#user_div").toggle()
   }
 }
