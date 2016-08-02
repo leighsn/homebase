@@ -25,7 +25,7 @@ class JamBaseEventController {
   jambaseEventAdapter(){
     //variables for ajax call
     var userZip = Store.users[0].zipcode
-    var urlString = `http://api.jambase.com/events?zipCode=${userZip}&radius=25&page=0&api_key=m4mdrr2uhpnkydjcxgp3a5bp`
+    var urlString = `http://api.jambase.com/events?zipCode=${userZip}&radius=25&page=0&api_key=wd28u67g657ma3kzxjbdptac`
       console.log(urlString)
 
     // make ajax call & parse results
