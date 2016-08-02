@@ -10,8 +10,6 @@ $(function() { // on document ready
   textController.init()
   defaultPage()
 
-  // $('.container').hide()
-
   $('#log_out_link').click(defaultPage(), function(){
     $("#user_div, #login_form").toggle()
   })
@@ -20,8 +18,7 @@ $(function() { // on document ready
     var name = $('#username').val()
     var zip = $('#user-zipcode').val()
     event.preventDefault()
-    // $('.login-overlay').hide()
-    // $('.container').show()
+    $('.login-overlay').fadeOut()
 
     var userController = new UserController(name, zip)
     userController.init()
