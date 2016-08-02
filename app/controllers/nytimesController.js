@@ -6,7 +6,7 @@ class nytimesController {
   }
 
   feedBuilder(){
-    for (var i=0; i<10; i++){
+    for (var i=0; i<15; i++){
         Store.nytimesArticles[i].build()
     }
   }
