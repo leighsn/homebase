@@ -29,24 +29,23 @@ const JambaseEvent = (function(){
       return `${month}/${day}/${year}`
     }
 
-    build(){
-      $('#event-feed').append(`<li>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <span>
-                <h3 class="panel-title">
-                  <span> ${this.eventDate} </span> --
-                  <span> ${this.city} </span>
-                </h3>
-            </div>
-            <div class="panel-body">
-              <h3> <a href="${this.ticketURL}"> ${this.artistName} </a></h3>
-              @<a href="${this.venueLink}">${this.venue}</a>
-              <br>
-            </div>
-          </div>
-        </li>`)
-    }
+    // build(){
+    //   $('#event-feed').append(`<li>
+    //       <div class="panel panel-default">
+    //         <div class="panel-heading">
+    //           <span>
+    //             <h3 class="panel-title">
+    //             </h3>
+    //         </div>
+    //         <div class="panel-body">
+    //           <h2> <a href="${this.ticketUrl}"> ${this.artistName} </a></h2>
+    //           <h3> <a href="${this.venueLink}">${this.venue}</a> </h3>
+    //           <h4> ${this.city} | ${this.eventDate} </h4>
+    //           <br>
+    //         </div>
+    //       </div>
+    //     </li>`)
+    // }
   }
 
 }())
