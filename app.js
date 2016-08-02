@@ -8,9 +8,9 @@ const Store = {
 $(function() { // on document ready
   textController = new twilioSendTextController()
   textController.init()
-
-
   defaultPage()
+
+  $('.container').hide()
 
   $('#log_out_link').click(defaultPage(), function(){
     $("#user_div, #login_form").toggle()
@@ -20,13 +20,11 @@ $(function() { // on document ready
     var name = $('#username').val()
     var zip = $('#user-zipcode').val()
     event.preventDefault()
+    $('.login-overlay').hide()
+    $('.container').show()
 
     var userController = new UserController(name, zip)
     userController.init()
-
-
-
-
   })
 
   //populate default list of restaurants (set to US)
@@ -53,3 +51,10 @@ $(function() { // on document ready
     })
   }
 })
+
+function inputFocus(i){
+    if(i.value==i.defaultValue){ i.value=""; i.style.color="#000"; }
+}
+function inputBlur(i){
+    if(i.value==""){ i.value=i.defaultValue; i.style.color="#888"; }
+}
