@@ -1,34 +1,79 @@
 class UserController {
-    init() {
-      this.userSubmitListener()
-      console.log('UserController.init() being called')
-    }
+  constructor(name, zip) {
+    this.userName = name
+    this.userZip = zip
+  }
 
-    userSubmitListener() {
-      $('#user-form-submit').on('click', function(event) {
-        //on submit -------
-        event.preventDefault()
-        console.log('User Submit Working')
-        //create new user
-        UserController.prototype.createUser()
+  init() {
+    console.log('UserController.init() being called')
+    this.checkExistingUsers()
 
-        //create a new instance of a jambaseEventController
+  }
 
-        var nytController = new nytimesController();
-        nytController.init()
+  // UserController.prototype.createUser()
 
-        var jambaseEventController = new JamBaseEventController();
-        jambaseEventController.init()
 
+  usersPresent(){
+    return Store.users.length != 0
+    //If Store.users is not 0, returns true
+  }
+
+  checkExistingUsers(){
+    var users = Store.users
+    var name = this.userName
+    if (Store.users.length != 0) {
+      $(users).each(function(){
+        var searchName = name.toLowerCase()
+        var thisName = this.name.toLowerCase()
+        if (searchName == thisName) {
+          alert('Existing user found')
+        }
       })
-      }
-
-     createUser() {
-      let name = $('#username').val()
-      let zip = $('#user-zipcode').val()
-      var newUser = new User(name, zip)
-      if (Store.users.length > 0) {
-        console.log('Created new User')
-      }
+      this.createNewUser()
+    } else {
+      this.createNewUser()
     }
+  }
+
+  //Why the hell isn't this function working?
+  checkUserStore(users){
+    $(users).each(function(){
+      var searchName = name.toLowerCase()
+      var thisName = this.name.toLowerCase()
+      if (searchName == thisName) {
+        console.log('Existing user found')
+      }
+    })
+  }
+
+  createNewUser() {
+    new User(this.userName, this.userZip)
+    var jambaseEventController = new JamBaseEventController();
+    var restaurantListController = new RestaurantListController();
+    //ny times new here
+    var nytController = new nytimesController();
+    console.log('Created new User')
+
+    //I want to break these out
+    jambaseEventController.init()
+    restaurantListController.init(this.userZip)
+    //ny times init here
+    nytController.init()
+    this.changeHomePage()
+  }
+
+  changeHomePage() {
+    $("#logged_in").html('<a href="#">Welcome,' + this.userName + '!</a>').toggle()
+    $("#user_div, #login_form").toggle()
+  }
+
+  // initializeUserPreference(){
+  // var jambaseEventController = JamBaseEventController();
+  // var restaurantListController = RestaurantListController();
+
+  // jambaseEventController.init()
+  // restaurantListController.init()
+
+  // }
+
 }

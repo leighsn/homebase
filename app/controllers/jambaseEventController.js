@@ -16,7 +16,7 @@ class JamBaseEventController {
     //variables for ajax call
     var userZip = Store.users[0].zipcode
     var urlString = `http://api.jambase.com/events?zipCode=${userZip}&radius=25&page=0&api_key=m4mdrr2uhpnkydjcxgp3a5bp`
-    console.log(urlString)
+      console.log(urlString)
 
     // make ajax call & parse results
     $.ajax({
@@ -25,10 +25,10 @@ class JamBaseEventController {
     }).done(function(response) {
       if (response.Events.length > 0) {
         JamBaseEventController.prototype.jamebaseEventFactory(response.Events)
-      JamBaseEventController.prototype.feedBuilder()
-    } else {
-      alert('Invalid Search')
-    }
+        JamBaseEventController.prototype.feedBuilder()
+      } else {
+        alert('Invalid Search')
+      }
     }) // callback function within .done
   } //jambaseEventAdapter close
 

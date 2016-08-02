@@ -5,8 +5,10 @@
     <title>Eat, Read, Rock, Repeat</title>
   <script src="lib/jquery-3.1.0.min.js"></script>
   <script src="app/models/user.js"></script>
-  <script src="app/models/jambaseEvent.js"></script>
   <script src="app/controllers/userController.js"></script>
+  <script src="app/models/restaurantList.js"></script>
+  <script src="app/models/jambaseEvent.js"></script>
+  <script src="app/controllers/restaurantListController.js"></script>
   <script src="app/controllers/jambaseEventController.js"></script>
   <script src="app/controllers/nytimesController.js"></script>
   <script src="app/controllers/twilioSendText.js"></script>
@@ -14,7 +16,6 @@
   <script src="app/models/nytimesArticle.js"></script>
   <script src="app.js"></script>
   <script src="config.js"></script>
-    <script src="app/models/restaurant.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="lib/css/style.css" media="screen" rel="stylesheet" type="text/css">
@@ -35,15 +36,16 @@
             <a class="navbar-brand" href="#">Eat, Read, Rock, Repeat</a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a>Welcome, User Name!</a></li>
+            <ul id="user_div" style="display: none;" class="nav navbar-nav navbar-right">
+              <li><a href="#">Welcome, User!</a></li>
+              <li><a href="#" id="log_out_link">Log Out</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
       <div class="row">
         <div class="col-md-3">
-          <div class="well well-lg">
+          <div id="login_form" class="well well-lg">
             <form id="user-form">
               <div class="form-group">
                 <label>Username:</label>
@@ -63,15 +65,14 @@
           <div class="row">
             <div class="col-md-4">
               <!--opentable-->
+              <h2>Restaurants In Your Area</h2>
               <ul class="list-unstyled" id="restaurant_feed">
-                <h2>Open Table</h2>
               </ul>
             </div>
             <div class="col-md-4">
               <!--nyt-->
               <h2>New York Times</h2>
               <ul class="list-unstyled" id="nyt-feed">
-                
               </ul>
             </div>
             <div class="col-md-4">
