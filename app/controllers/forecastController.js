@@ -33,6 +33,7 @@ class ForecastController {
 
   renderForecast(daySummary,dayTempMax, dayTempMin)
   {
+    $('#weather-feed').empty()
     $('#weather-feed').append(`
         <div class="col-md-9">
           <p> ${daySummary} Today Max: ${dayTempMax} Today Min: ${dayTempMin} </p> 

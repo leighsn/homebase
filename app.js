@@ -26,9 +26,6 @@ $(function() { // on document ready
 
   })
 
-  $('#send-text').on('click',function(event) {
-    console.log("hi you clicked me")
-  })
   //populate default list of restaurants (set to US)
 
   function defaultPage() {
