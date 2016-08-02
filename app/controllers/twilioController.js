@@ -1,10 +1,10 @@
 class twilioController {
-  init() {
+  init(daySummary,dayTempMax,dayTempMin) {
     console.log('twilio init controller has been reached')
-    this.twilioAdapter()
+    this.twilioAdapter(daySummary,dayTempMax,dayTempMin)
   }
 
-  twilioAdapter(){
+  twilioAdapter(daySummary,dayTempMax,dayTempMin){
       var TwilioSMS = (function($) {
 
       var accountSid = 'AC18e64556d07f74c4c3c5d43f0775b2b1'; // replace with your account SID

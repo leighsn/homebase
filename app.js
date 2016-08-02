@@ -23,8 +23,12 @@ $(function() { // on document ready
 
     var userController = new UserController(name, zip)
     userController.init()
+
   })
 
+  $('#send-text').on('click',function(event) {
+    console.log("hi you clicked me")
+  })
   //populate default list of restaurants (set to US)
 
   function defaultPage() {
